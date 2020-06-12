@@ -11,7 +11,7 @@
 
     <script>
         function ipLookUp() {
-            $.ajax('http://ip-api.com/json')
+            $.ajax('https://json.geoiplookup.io/')
                 .then(
                     function success(response) {
                         var pretty = JSON.stringify(response, null, 2);
