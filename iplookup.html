@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="stylesheet" href="css/style.css">
+    <title>IP location - muhallilahnaf</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">home</a>
+        <a href="social.html">social</a>
+        <a href="iplookup.html" class="active">IP location</a>
+    </nav>
+    <header>
+        <h1>IP location</h1>
+    </header>
+    <main>
+        <section id="ip"></section>
+    </main>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        function ipLookUp() {
+            var keys = ['ip', 'isp', 'latitude', 'longitude', 'city', 'country_name', 'continent_name', 'region', 'district', 'timezone_name', 'asn'];
+            $.getJSON("https://json.geoiplookup.io/")
+                .done(function (response) {
+                    $("#ip").append('<p>Your IP info:</p>\n');
+                    $("#ip").append('<table>');
+                    $.each(keys, function (index, value) {
+                        $("#ip").append('<tr><td class="colA">' + value + '</td><td class="colB">' + response[value] + '</td></tr>');
+                    });
+                    $("#ip").append('</table>');
+                    console.log("success");
+                })
+                .fail(function () {
+                    $("#ip").append('<p>IP retrieving failed (try to disable ad-block and then refresh)</p>');
+                });
+        }
+
+        ipLookUp(); 
+    </script>
+</body>
+
+</html>

@@ -10,15 +10,25 @@ h1{
 }
 
 nav{
-    display: inline-block;
+    display: inline-grid;
+    grid-template-columns: 7rem 7rem 7rem auto;
+    column-gap: 1rem;
     background-color: #444857;
-    padding: 1rem;
-    margin: 3%;
+    padding: 0.25rem;
 }
 
 a{
     color: #ffffff;
     text-decoration: none;
+}
+
+nav a{
+    padding: 0.5rem;
+    text-align: center;
+}
+
+nav a.active{
+    background-color: #696d79;
 }
 
 #ip table, td{
@@ -58,6 +68,10 @@ a{
 }
 
 @media(hover: hover) {
+    nav a:hover{
+        color: #0086e6;
+    }
+
     #ip tr:hover{
         background-color: #444857;
     }
