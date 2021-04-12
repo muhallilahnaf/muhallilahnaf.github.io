@@ -8,6 +8,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
+    <link href="fa/css/fontawesome.min.css" rel="stylesheet">
+    <link href="fa/css/solid.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>apps - muhallilahnaf</title>
 </head>
@@ -30,14 +32,50 @@
                     <p class="app-title">imageCompare</p>
                 </div>
             </div>
-            <p class="app-description">A cross platform desktop app to compare similar/duplicate images before deleting.
+            <p class="app-description">
+                A cross platform desktop app to compare and delete similar/duplicate images.
             </p>
-            <div class="links">
-                <a href="https://github.com/muhallilahnaf/image-compare-app">Source Code</a>
-                <a href="https://github.com/muhallilahnaf/image-compare-app/releases" class="download">
-                    <img src="assets/download-solid.svg" width="16"></img>
-                    Downloads
-                </a>
+            <div id="links">
+                <div class="link" id="src-div">
+                    <a href="https://github.com/muhallilahnaf/image-compare-app">
+                        <i class="fas fa-code"></i>Source Code
+                    </a>
+                </div>
+                <div class="link" id="dl-div">
+                    <i class="fas fa-download"></i>Downloads
+                    <ul>
+                        <li>
+                            <a href="https://github.com/muhallilahnaf/image-compare-app/releases/download/v1.1.0/Windows-portable-exe.imageCompare-v1.1.0.exe"
+                                class="download">
+                                Windows Portable (.exe)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/muhallilahnaf/image-compare-app/releases/download/v1.1.0/Windows-setup-exe.imageCompare-setup-v1.1.0.exe"
+                                class="download">
+                                Windows Setup (.exe)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/muhallilahnaf/image-compare-app/releases/download/v1.1.0/MacOS-app.imageCompare-v1.1.0.zip"
+                                class="download">
+                                MacOS (.app)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/muhallilahnaf/image-compare-app/releases/download/v1.1.0/image-compare-app_1.1.0_amd64.deb"
+                                class="download">
+                                Linux Debian Package (.deb)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/muhallilahnaf/image-compare-app/releases/download/v1.1.0/Linux-AppImage.imageCompare-v1.1.0.AppImage"
+                                class="download">
+                                Linux AppImage (.AppImage)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>

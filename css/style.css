@@ -70,13 +70,58 @@ nav a.active{
     margin: 0;
 }
 
-.links a{
+#links {
     display: inline-block;
     padding: 0.5rem;
-    margin-right: 0.5rem;
-    background-color: lightgray;
-    color: black;
+    background-color: #5d8aa8;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius: 5px;
+}
+
+.link {
+    border-left: 3px solid darkslategray;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+#src-div i {
+    margin-right: 10px;
+}
+
+#src-div a {
+    color: black;
+    text-decoration: underline;
+}
+
+#src-div a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+#dl-div i {
+    margin-right: 15px;
+}
+
+#dl-div ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#dl-div li {
+    margin: 5px 0 5px 20px;
+    padding: 5px;
+}
+
+.download {
+    text-decoration: underline;
+    color: black;
+    padding: 5px;
+    font-size: 0.875em;
+}
+
+.download:hover {
+    opacity: 0.8;
 }
 
 #ip table, td{
@@ -99,6 +144,13 @@ nav a.active{
 #ipButton {
     padding: 0.5em;
     border-radius: 5px;
+    outline: none;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+#ipButton:hover {
+    opacity: 0.8;
 }
 
 .social a{
