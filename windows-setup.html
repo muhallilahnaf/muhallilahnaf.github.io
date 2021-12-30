@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Windows setup - muhallilahnaf</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">home</a>
+        <a href="apps.html">apps</a>
+        <a href="social.html">social</a>
+        <a href="iplookup.html" class="active">IP location</a>
+        <a href="iplookup.html" class="active">Windows setup</a>
+    </nav>
+    <header>
+        <h1>Windows setup</h1>
+    </header>
+    <main>
+        <section id="windows-dl">
+            <h3>1. download and install Windows</h3>
+            <p>
+                <a href="https://www.microsoft.com/en-us/software-download/windows10">installation media</a>
+            </p>
+            <p>optional: might want to google <i>massgravel</i> and click on the github link ;)</p>
+        </section>
+        <section id="windows-apps">
+            <h3>2. select Windows apps to install (uses <a href="https://chocolatey.org/">Chocolatey</a>)</h3>
+            <ul id="windows-apps-list">
+                <li>
+                    <input type="checkbox" id="sevenzip" name="app" value="sevenzip" checked>
+                    <label for="sevenzip">7Zip</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="advanced-renamer" name="app" value="advanced-renamer">
+                    <label for="advanced-renamer">Advanced Renamer</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="brave" name="app" value="brave">
+                    <label for="brave">Brave</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="crystal-disk-info" name="app" value="crystal-disk-info">
+                    <label for="crystal-disk-info">Crystal Disk Info</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="discord" name="app" value="discord" checked>
+                    <label for="discord">Discord</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="ditto" name="app" value="ditto" checked>
+                    <label for="ditto">Ditto</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="everything" name="app" value="everything" checked>
+                    <label for="everything">Everything</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="faststone-image-viewer" name="app" value="faststone-image-viewer">
+                    <label for="faststone-image-viewer">FastStone Image Viewer</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="free-download-manager" name="app" value="free-download-manager" checked>
+                    <label for="free-download-manager">Free Download Manager</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="git" name="app" value="git" checked>
+                    <label for="git">Git</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="google-chrome" name="app" value="google-chrome" checked>
+                    <label for="google-chrome">Google Chrome</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="google-drive" name="app" value="google-drive">
+                    <label for="google-drive">Google Drive</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="hwinfo" name="app" value="hwinfo" checked>
+                    <label for="hwinfo">HWiNFO</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="libreoffice" name="app" value="libreoffice" checked>
+                    <label for="libreoffice">LibreOffice</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="lightshot" name="app" value="lightshot" checked>
+                    <label for="lightshot">Lightshot</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="microsoft-visual-studio-code" name="app"
+                        value="microsoft-visual-studio-code" checked>
+                    <label for="microsoft-visual-studio-code">Microsoft Visual Studio Code</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="mozilla-firefox" name="app" value="mozilla-firefox">
+                    <label for="mozilla-firefox">Mozilla Firefox</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="mozilla-thunderbird" name="app" value="mozilla-thunderbird">
+                    <label for="mozilla-thunderbird">Mozilla Thunderbird</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="musicbee" name="app" value="musicbee" checked>
+                    <label for="musicbee">MusicBee</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="nodejs" name="app" value="nodejs" checked>
+                    <label for="nodejs">Node.js (LTS)</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="notepadplusplus" name="app" value="notepadplusplus" checked>
+                    <label for="notepadplusplus">Notepad++</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="obs-studio" name="app" value="obs-studio" checked>
+                    <label for="obs-studio">OBS Studio</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="python" name="app" value="python" checked>
+                    <label for="python">Python</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="qbittorrent" name="app" value="qbittorrent" checked>
+                    <label for="qbittorrent">qBittorrent</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="revo-uninstaller" name="app" value="revo-uninstaller">
+                    <label for="revo-uninstaller">Revo Uninstaller</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="sumatrapdf" name="app" value="sumatrapdf" checked>
+                    <label for="sumatrapdf">SumatraPDF</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="telegram" name="app" value="telegram">
+                    <label for="telegram">Telegram</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="treesize-free" name="app" value="treesize-free" checked>
+                    <label for="treesize-free">Treesize Free</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="unified-remote" name="app" value="unified-remote">
+                    <label for="unified-remote">Unified Remote</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="vlc-media-player" name="app" value="vlc-media-player" checked>
+                    <label for="vlc-media-player">VLC media player</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="windscribe" name="app" value="windscribe">
+                    <label for="windscribe">Windscribe</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zoom" name="app" value="zoom">
+                    <label for="zoom">Zoom</label>
+                </li>
+            </ul>
+            <button id="windows-gen-script">generate script</button>
+            <div id="hidden">
+                <div id="dl-script">
+                    <h4>download and run script</h4>
+                    <ol>
+                        <li>download PowerShell script: <button id="windows-dl-script">download
+                                setup.ps1</button></li>
+                        <li>setup.ps1 > right-click > Open in PowerShell</li>
+                    </ol>
+                </div>
+                <div id="copy-script">
+                    <h4>OR, copy-paste script</h4>
+                    <ol>
+                        <li>open PowerShell as admin</li>
+                        <li>paste and hit enter:
+                            <p class="textarea-wrapper">
+                                <textarea rows="5" cols="30"
+                                    readonly>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</textarea>
+                            </p>
+                        </li>
+                        <li>close PowerShell window</li>
+                        <li>again open PowerShell window as admin</li>
+                        <li>paste and hit enter:
+                            <p class="textarea-wrapper">
+                                <textarea id="cinst" rows="5" cols="30" readonly>cinst sumatrapdf 7zip -yr</textarea>
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script>
+        const appsDict = {
+            "sevenzip": "7zip",
+            "advanced-renamer": "advanced-renamer",
+            "brave": "brave",
+            "crystal-disk-info": "crystaldiskinfo",
+            "discord": "discord",
+            "ditto": "ditto",
+            "everything": "everything",
+            "faststone-image-viewer": "fsviewer",
+            "free-download-manager": "freedownloadmanager",
+            "git": "git",
+            "google-chrome": "googlechrome",
+            "google-drive": "googledrive",
+            "hwinfo": "hwinfo",
+            "libreoffice": "libreoffice-fresh",
+            "lightshot": "lightshot",
+            "microsoft-visual-studio-code": "vscode",
+            "mozilla-firefox": "firefox",
+            "mozilla-thunderbird": "thunderbird",
+            "musicbee": "musicbee",
+            "nodejs": "nodejs-lts",
+            "notepadplusplus": "notepadplusplus",
+            "obs-studio": "obs-studio",
+            "python": "python",
+            "qbittorrent": "qbittorrent",
+            "revo-uninstaller": "revo-uninstaller",
+            "sumatrapdf": "sumatrapdf",
+            "telegram": "telegram",
+            "treesize-free": "treesizefree",
+            "unified-remote": "unifiedremote",
+            "vlc-media-player": "vlc",
+            "windscribe": "windscribe",
+            "zoom": "zoom"
+        }
+        const script1 = 'Start-Process powershell -Verb runas {function Install-Choco {[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString("https://community.chocolatey.org/install.ps1"))}; $policy = Get-ExecutionPolicy; if ($policy -eq "restricted") {Write-Host "bypassing restriction" -ForegroundColor yellow; Set-ExecutionPolicy Bypass -Scope Process -Force; Install-Choco;} else {Write-Host "not restricted" -ForegroundColor yellow; Install-Choco}; Write-Host "press any key to continue" -ForegroundColor yellow; Read-Host; Start-Process powershell -Verb runas {cinst '
+        const script2 = '-yr; Write-Host "you can close this window" -ForegroundColor yellow; Read-Host}}'
+        let appsStr = ''
+        const generate = () => {
+            const inputs = document.querySelectorAll('#windows-apps-list input')
+            appsStr = ''
+            inputs.forEach(input => {
+                if (input.checked) appsStr = `${appsStr}${appsDict[input.id]} `
+            })
+            document.getElementById('cinst').value = `cinst ${appsStr} -yr`
+            document.getElementById('hidden').style.display = 'block'
+        }
+        const genButton = document.getElementById('windows-gen-script')
+        genButton.addEventListener('click', generate)
+        const download = () => {
+            const script = `${script1}${appsStr}${script2}`
+            const blob = new Blob([script], { type: 'text/plain;charset=utf-8' })
+            saveAs(blob, 'setup.ps1')
+        }
+        const dlButton = document.getElementById('windows-dl-script')
+        dlButton.addEventListener('click', download)
+        // TODO: add copy button, redesign menu
+    </script>
+</body>
+
+</html>

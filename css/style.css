@@ -205,3 +205,88 @@ nav a.active{
 .medium {
     background-color: black;
 }
+
+/* windows-setup */
+#windows-dl {
+    background-color: slategrey;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#windows-dl h3 {
+    color: black;
+}
+
+#windows-dl a {
+    text-decoration: underline;
+}
+
+#windows-apps {
+    background-color: slategrey;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#windows-apps h3 {
+    color: black;
+}
+
+#windows-apps h3 a {
+    text-decoration: underline;
+}
+
+#windows-apps-list {
+    list-style-type: none;
+    color: black;
+}
+
+#windows-apps-list li {
+    margin-bottom: 0.5em;
+}
+
+#windows-gen-script {
+    margin-left: 10px;
+    font-size: medium;
+    padding: 0.5em;
+    border-radius: 5px;
+    outline: none;
+    background-color: lightgray;
+    cursor: pointer;    
+}
+
+#hidden {
+    display: none;
+    margin: 20px;
+}
+
+#windows-dl-script {
+    margin-left: 10px;
+    padding: 0.5em;
+    border-radius: 5px;
+    outline: none;
+    background-color: lightgray;
+    cursor: pointer;    
+}
+
+#dl-script, #copy-script {
+    background-color: #5d8aa8;
+    color: black;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#dl-script li, #copy-script li {
+    margin-bottom: 5px;
+}
+
+.textarea-wrapper {
+    padding-right: 10px;
+}
+
+.textarea-wrapper textarea {
+    width: 100%;
+    background-color: black;
+    color: #0086e6;
+}
