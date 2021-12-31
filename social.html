@@ -8,9 +8,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
-    <link rel="stylesheet" href="css/style.css">
     <link href="fa/css/fontawesome.min.css" rel="stylesheet">
     <link href="fa/css/brands.min.css" rel="stylesheet">
+    <link href="fa/css/solid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>social - muhallilahnaf</title>
 </head>
 
@@ -20,6 +21,8 @@
         <a href="apps.html">apps</a>
         <a href="social.html" class="active">social</a>
         <a href="iplookup.html">IP location</a>
+        <a href="windows-setup.html">Windows setup</a>
+        <a href="#" class="menu"><i class="fas fa-bars"></i></a>
     </nav>
     <header>
         <h1>Social Media and Other Links</h1>
@@ -68,6 +71,10 @@
             <br>
         </section>
     </main>
+    <script>
+        const toggleMenu = () => document.querySelector('nav').classList.toggle('responsive')
+        document.querySelector('nav a.menu').addEventListener('click', toggleMenu)
+    </script>
 </body>
 
 </html>

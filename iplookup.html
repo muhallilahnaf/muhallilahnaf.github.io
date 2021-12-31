@@ -8,6 +8,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
+    <link href="fa/css/fontawesome.min.css" rel="stylesheet">
+    <link href="fa/css/solid.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>IP location - muhallilahnaf</title>
 </head>
@@ -18,6 +20,8 @@
         <a href="apps.html">apps</a>
         <a href="social.html">social</a>
         <a href="iplookup.html" class="active">IP location</a>
+        <a href="windows-setup.html">Windows setup</a>
+        <a href="#" class="menu"><i class="fas fa-bars"></i></a>
     </nav>
     <header>
         <h1>IP location</h1>
@@ -28,6 +32,8 @@
     </main>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
+        const toggleMenu = () => document.querySelector('nav').classList.toggle('responsive')
+        document.querySelector('nav a.menu').addEventListener('click', toggleMenu)
         function ipLookUp() {
             var keys = ['ip', 'isp', 'latitude', 'longitude', 'city', 'country_name', 'continent_name', 'region', 'district', 'timezone_name', 'asn'];
             $.getJSON("https://json.geoiplookup.io/")

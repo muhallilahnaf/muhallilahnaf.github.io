@@ -5,7 +5,6 @@
 body{
     background-color: #1e1f26;
     color: #ffffff;
-    padding: 5px;    
 }
 
 h1{
@@ -13,8 +12,9 @@ h1{
 }
 
 nav{
-    padding: 0.25rem;
     margin-bottom: 2em;
+    background-color: #696d79;
+    overflow: hidden;
 }
 
 a{
@@ -23,18 +23,49 @@ a{
 }
 
 nav a{
-    margin: 0.25rem;
+    float: left;
+    display: block;
     padding: 0.5em;
     text-align: center;
 }
 
 nav a:hover {
-    background-color: #444857;
+    background-color: black;
     color: #0086e6;
 }   
 
 nav a.active{
-    background-color: #696d79;
+    background-color: #1e1f26;
+}
+
+nav a.menu {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        border: 2px solid white;
+    }
+    nav a:not(:first-child) {
+        display: none;
+    }
+    nav a.menu {
+        float: right;
+        display: block;
+    }
+    nav.responsive {
+        position: relative;
+    }
+    nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    nav.responsive a.menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 }
 
 .apps {

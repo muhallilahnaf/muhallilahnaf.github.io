@@ -20,6 +20,8 @@
         <a href="apps.html" class="active">apps</a>
         <a href="social.html">social</a>
         <a href="iplookup.html">IP location</a>
+        <a href="windows-setup.html">Windows setup</a>
+        <a href="#" class="menu"><i class="fas fa-bars"></i></a>
     </nav>
     <header>
         <h1>Apps I Made</h1>
@@ -79,6 +81,10 @@
             </div>
         </section>
     </main>
+    <script>
+        const toggleMenu = () => document.querySelector('nav').classList.toggle('responsive')
+        document.querySelector('nav a.menu').addEventListener('click', toggleMenu)
+    </script>
 </body>
 
 </html>
