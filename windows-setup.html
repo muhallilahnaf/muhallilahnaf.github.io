@@ -183,9 +183,10 @@
                         <li>open PowerShell as admin</li>
                         <li>paste and hit enter:
                             <p class="textarea-wrapper">
-                                <textarea rows="5" cols="30"
+                                <textarea rows="5" cols="30" id="exec-policy"
                                     readonly>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</textarea>
                             </p>
+                            <button id="exec-policy-button">copy to clipboard</button>
                         </li>
                         <li>close PowerShell window</li>
                         <li>again open PowerShell window as admin</li>
@@ -193,6 +194,7 @@
                             <p class="textarea-wrapper">
                                 <textarea id="cinst" rows="5" cols="30" readonly>cinst sumatrapdf 7zip -yr</textarea>
                             </p>
+                            <button id="cinst-button">copy to clipboard</button>
                         </li>
                     </ol>
                 </div>
@@ -263,7 +265,15 @@
         }
         const dlButton = document.getElementById('windows-dl-script')
         dlButton.addEventListener('click', download)
-        // TODO: add copy button
+        const copyToClipboard = (e) => {
+            const id = e.target.id.replace('-button', '')
+            const text = document.getElementById(id).value
+            navigator.clipboard.writeText(text)
+        }
+        const execPolicyButton = document.getElementById('exec-policy-button')
+        execPolicyButton.addEventListener('click', copyToClipboard)
+        const cinstButton = document.getElementById('cinst-button')
+        cinstButton.addEventListener('click', copyToClipboard)
     </script>
 </body>
 
