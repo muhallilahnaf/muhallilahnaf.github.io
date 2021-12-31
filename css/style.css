@@ -234,6 +234,7 @@ nav a.active{
 
 #windows-apps h3 a {
     text-decoration: underline;
+    color: black;
 }
 
 #windows-apps-list {

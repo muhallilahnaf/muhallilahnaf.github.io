@@ -245,7 +245,9 @@
                 if (input.checked) appsStr = `${appsStr}${appsDict[input.id]} `
             })
             document.getElementById('cinst').value = `cinst ${appsStr} -yr`
-            document.getElementById('hidden').style.display = 'block'
+            const hidden = document.getElementById('hidden')
+            hidden.style.display = 'block'
+            hidden.scrollIntoView({ behavior: "smooth", block: "nearest" })
         }
         const genButton = document.getElementById('windows-gen-script')
         genButton.addEventListener('click', generate)
