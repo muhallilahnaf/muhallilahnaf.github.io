@@ -292,8 +292,7 @@ nav a.menu {
     margin: 20px;
 }
 
-#windows-dl-script, #exec-policy-button, #cinst-button {
-    margin-left: 10px;
+#exec-policy-button, #cinst-button {
     padding: 0.5em;
     border-radius: 5px;
     outline: none;
