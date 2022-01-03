@@ -28,30 +28,67 @@
     </header>
     <main>
         <button id="ipButton">click to check your IP info</button>
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+        </div>
         <section id="ip"></section>
     </main>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
         const toggleMenu = () => document.querySelector('nav').classList.toggle('responsive')
         document.querySelector('nav a.menu').addEventListener('click', toggleMenu)
-        function ipLookUp() {
-            var keys = ['ip', 'isp', 'latitude', 'longitude', 'city', 'country_name', 'continent_name', 'region', 'district', 'timezone_name', 'asn'];
-            $.getJSON("https://json.geoiplookup.io/")
-                .done(function (response) {
-                    $("#ip").append('<p>Your IP info:</p>\n');
-                    $("#ip").append('<table>');
-                    $.each(keys, function (index, value) {
-                        $("#ip").append('<tr><td class="colA">' + value + '</td><td class="colB">' + response[value] + '</td></tr>');
-                    });
-                    $("#ip").append('</table>');
-                    console.log("success");
-                })
-                .fail(function () {
-                    $("#ip").append('<p>IP retrieving failed (try to disable ad-block and then refresh)</p>');
-                });
+        const createNode = (tag, classes, text) => {
+            const element = document.createElement(tag)
+            if (classes) element.classList.add(...classes)
+            if (text) element.textContent = text
+            return element
         }
-
-        $('#ipButton').click(ipLookUp);
+        const ip = document.getElementById('ip')
+        const ipButton = document.getElementById('ipButton')
+        const loader = document.querySelector('.loader-wrapper')
+        const ipLookUp = () => {
+            while (ip.firstChild) {
+                ip.firstChild.remove()
+            }
+            ipButton.disabled = true
+            loader.style.display = 'block'
+            const keys = [
+                'ip',
+                'isp',
+                'latitude',
+                'longitude',
+                'city',
+                'country_name',
+                'continent_name',
+                'region',
+                'district',
+                'timezone_name',
+                'asn'
+            ]
+            $.getJSON("https://json.geoiplookup.io/")
+                .done(data => {
+                    const table = document.createElement('table')
+                    keys.forEach(key => {
+                        const tr = document.createElement('tr')
+                        const colA = createNode('td', ['colA'], key)
+                        const colB = createNode('td', ['colB'], data[key])
+                        tr.appendChild(colA)
+                        tr.appendChild(colB)
+                        table.appendChild(tr)
+                    })
+                    ipButton.disabled = false
+                    loader.style.display = 'none'
+                    ip.appendChild(createNode('p', null, 'Your IP info:'))
+                    ip.appendChild(table)
+                })
+                .fail(e => {
+                    ipButton.disabled = false
+                    loader.style.display = 'none'
+                    ip.appendChild(createNode('p', null, 'IP retrieving failed (try to disable ad-block and then refresh)'))
+                    console.log(e)
+                })
+        }
+        ipButton.addEventListener('click', ipLookUp)
     </script>
 </body>
 
