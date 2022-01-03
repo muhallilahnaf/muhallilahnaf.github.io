@@ -169,23 +169,31 @@
             </ul>
             <button id="windows-gen-script">generate script</button>
             <div id="hidden">
+                <div id="dl-script">
+                    <h4>download and run script</h4>
+                    <ol>
+                        <li>download PowerShell script: <button id="windows-dl-script">download
+                                setup.ps1</button></li>
+                        <li>setup.ps1 > right-click > Open in PowerShell</li>
+                    </ol>
+                </div>
                 <div id="copy-script">
-                    <h4>copy-paste script</h4>
+                    <h4>OR, copy-paste script</h4>
                     <ol>
                         <li>open PowerShell as admin</li>
                         <li>paste and hit enter:
-                            <div class="textarea-wrapper">
+                            <p class="textarea-wrapper">
                                 <textarea rows="5" cols="30" id="exec-policy"
                                     readonly>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</textarea>
-                            </div>
+                            </p>
                             <button id="exec-policy-button">copy to clipboard</button>
                         </li>
                         <li>close PowerShell window</li>
                         <li>again open PowerShell window as admin</li>
                         <li>paste and hit enter:
-                            <div class="textarea-wrapper">
-                                <textarea id="cinst" rows="5" cols="30" readonly></textarea>
-                            </div>
+                            <p class="textarea-wrapper">
+                                <textarea id="cinst" rows="5" cols="30" readonly>cinst sumatrapdf 7zip -yr</textarea>
+                            </p>
                             <button id="cinst-button">copy to clipboard</button>
                         </li>
                     </ol>
@@ -193,6 +201,10 @@
             </div>
         </section>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
     <script>
         const toggleMenu = () => document.querySelector('nav').classList.toggle('responsive')
         document.querySelector('nav a.menu').addEventListener('click', toggleMenu)
@@ -230,6 +242,8 @@
             "windscribe": "windscribe",
             "zoom": "zoom"
         }
+        const script1 = 'Start-Process powershell -Verb runas {function Install-Choco {[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString("https://community.chocolatey.org/install.ps1"))}; $policy = Get-ExecutionPolicy; if ($policy -eq "restricted") {Write-Host "bypassing restriction" -ForegroundColor yellow; Set-ExecutionPolicy Bypass -Scope Process -Force; Install-Choco;} else {Write-Host "not restricted" -ForegroundColor yellow; Install-Choco}; Write-Host "press any key to continue" -ForegroundColor yellow; Read-Host; Start-Process powershell -Verb runas {cinst '
+        const script2 = '-yr; Write-Host "you can close this window" -ForegroundColor yellow; Read-Host}}'
         let appsStr = ''
         const generate = () => {
             const inputs = document.querySelectorAll('#windows-apps-list input')
@@ -244,6 +258,13 @@
         }
         const genButton = document.getElementById('windows-gen-script')
         genButton.addEventListener('click', generate)
+        const download = () => {
+            const script = `${script1}${appsStr}${script2}`
+            const blob = new Blob([script], { type: 'text/plain;charset=utf-8' })
+            saveAs(blob, 'setup.ps1')
+        }
+        const dlButton = document.getElementById('windows-dl-script')
+        dlButton.addEventListener('click', download)
         const copyToClipboard = (e) => {
             const id = e.target.id.replace('-button', '')
             const text = document.getElementById(id).value
