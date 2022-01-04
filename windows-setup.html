@@ -32,10 +32,13 @@
             <p>
                 <a href="https://www.microsoft.com/en-us/software-download/windows10">installation media</a>
             </p>
-            <p>optional: might want to google <i>massgravel</i> and click on the github link ;)</p>
         </section>
         <section id="windows-apps">
             <h3>2. select Windows apps to install (uses <a href="https://chocolatey.org/">Chocolatey</a>)</h3>
+            <div id="select-all-none">
+                <button id="select-all">select all</button>
+                <button id="select-none">select none</button>
+            </div>
             <ul id="windows-apps-list">
                 <li>
                     <input type="checkbox" id="sevenzip" name="app" value="sevenzip" checked>
@@ -54,6 +57,10 @@
                     <label for="crystal-disk-info">Crystal Disk Info</label>
                 </li>
                 <li>
+                    <input type="checkbox" id="crystal-disk-mark" name="app" value="crystal-disk-mark">
+                    <label for="crystal-disk-mark">Crystal Disk Mark</label>
+                </li>
+                <li>
                     <input type="checkbox" id="discord" name="app" value="discord" checked>
                     <label for="discord">Discord</label>
                 </li>
@@ -62,12 +69,20 @@
                     <label for="ditto">Ditto</label>
                 </li>
                 <li>
+                    <input type="checkbox" id="droidcam" name="app" value="droidcam">
+                    <label for="droidcam">Droidcam</label>
+                </li>
+                <li>
                     <input type="checkbox" id="everything" name="app" value="everything" checked>
                     <label for="everything">Everything</label>
                 </li>
                 <li>
                     <input type="checkbox" id="faststone-image-viewer" name="app" value="faststone-image-viewer">
                     <label for="faststone-image-viewer">FastStone Image Viewer</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="ffmpeg" name="app" value="ffmpeg">
+                    <label for="ffmpeg">ffmpeg</label>
                 </li>
                 <li>
                     <input type="checkbox" id="free-download-manager" name="app" value="free-download-manager" checked>
@@ -94,7 +109,7 @@
                     <label for="libreoffice">LibreOffice</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="lightshot" name="app" value="lightshot" checked>
+                    <input type="checkbox" id="lightshot" name="app" value="lightshot">
                     <label for="lightshot">Lightshot</label>
                 </li>
                 <li>
@@ -127,6 +142,14 @@
                     <label for="obs-studio">OBS Studio</label>
                 </li>
                 <li>
+                    <input type="checkbox" id="proton-vpn" name="app" value="proton-vpn">
+                    <label for="proton-vpn">ProtonVPN</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="putty" name="app" value="putty">
+                    <label for="putty">Putty</label>
+                </li>
+                <li>
                     <input type="checkbox" id="python" name="app" value="python" checked>
                     <label for="python">Python</label>
                 </li>
@@ -137,6 +160,14 @@
                 <li>
                     <input type="checkbox" id="revo-uninstaller" name="app" value="revo-uninstaller">
                     <label for="revo-uninstaller">Revo Uninstaller</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="rufus" name="app" value="rufus">
+                    <label for="rufus">Rufus</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="shotcut" name="app" value="shotcut">
+                    <label for="shotcut">Shotcut</label>
                 </li>
                 <li>
                     <input type="checkbox" id="sumatrapdf" name="app" value="sumatrapdf" checked>
@@ -155,12 +186,24 @@
                     <label for="unified-remote">Unified Remote</label>
                 </li>
                 <li>
+                    <input type="checkbox" id="universal-usb-installer" name="app" value="universal-usb-installer">
+                    <label for="universal-usb-installer">Universal USB Installer</label>
+                </li>
+                <li>
                     <input type="checkbox" id="vlc-media-player" name="app" value="vlc-media-player" checked>
                     <label for="vlc-media-player">VLC media player</label>
                 </li>
                 <li>
+                    <input type="checkbox" id="virtualbox" name="app" value="virtualbox">
+                    <label for="virtualbox">Virtualbox</label>
+                </li>
+                <li>
                     <input type="checkbox" id="windscribe" name="app" value="windscribe">
                     <label for="windscribe">Windscribe</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="youtube-dl" name="app" value="youtube-dl">
+                    <label for="youtube-dl">youtube-dl</label>
                 </li>
                 <li>
                     <input type="checkbox" id="zoom" name="app" value="zoom">
@@ -196,11 +239,20 @@
     <script>
         const toggleMenu = () => document.querySelector('nav').classList.toggle('responsive')
         document.querySelector('nav a.menu').addEventListener('click', toggleMenu)
+        const selectAll = () => {
+            document.querySelectorAll('#windows-apps-list input').forEach(input => input.checked = true)
+        }
+        document.getElementById('select-all').addEventListener('click', selectAll)
+        const selectNone = () => {
+            document.querySelectorAll('#windows-apps-list input').forEach(input => input.checked = false)
+        }
+        document.getElementById('select-none').addEventListener('click', selectNone)
         const appsDict = {
             "sevenzip": "7zip",
             "advanced-renamer": "advanced-renamer",
             "brave": "brave",
             "crystal-disk-info": "crystaldiskinfo",
+            "crystal-disk-mark": "crystaldiskmark",
             "discord": "discord",
             "ditto": "ditto",
             "everything": "everything",
@@ -228,7 +280,16 @@
             "unified-remote": "unifiedremote",
             "vlc-media-player": "vlc",
             "windscribe": "windscribe",
-            "zoom": "zoom"
+            "zoom": "zoom",
+            "droidcam": "droidcamclient",
+            "ffmpeg": "ffmpeg",
+            "youtube-dl": "youtube-dl",
+            "proton-vpn": "protonvpn",
+            "putty": "putty",
+            "rufus": "rufus",
+            "shotcut": "shotcut",
+            "universal-usb-installer": "universal-usb-installer",
+            "virtualbox": "virtualbox"
         }
         let appsStr = ''
         const generate = () => {
@@ -237,6 +298,7 @@
             inputs.forEach(input => {
                 if (input.checked) appsStr = `${appsStr}${appsDict[input.id]} `
             })
+            appsStr = (appsStr == '') ? 'virus' : appsStr
             document.getElementById('cinst').value = `cinst ${appsStr} -yr`
             const hidden = document.getElementById('hidden')
             hidden.style.display = 'block'
