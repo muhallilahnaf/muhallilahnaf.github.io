@@ -302,8 +302,30 @@ nav a.menu {
     color: black;
 }
 
+#windows-apps-list .row {
+    display: flex;
+}
+
+#windows-apps-list .row li {
+    flex: 50%;
+}
+
+@media screen and (max-width: 600px) {
+    #windows-apps-list .row {
+        display: block;
+    }
+}
+
 #windows-apps-list li {
     margin-bottom: 0.5em;
+}
+
+#windows-apps-list a {
+    color: black;
+}
+
+#windows-apps-list a:hover {
+    color: white;
 }
 
 #windows-gen-script {
