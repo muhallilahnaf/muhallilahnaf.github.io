@@ -289,7 +289,7 @@ nav a.menu {
     color: black;
 }
 
-#select-all, #select-none {
+button[id^="select-all"], button[id^="select-none"] {
     padding: 0.5em;
     border-radius: 5px;
     outline: none;
@@ -297,38 +297,38 @@ nav a.menu {
     cursor: pointer;
 }
 
-#windows-apps-list {
+ul[id^="windows-apps-list"] {
     list-style-type: none;
     color: black;
 }
 
-#windows-apps-list .row {
+ul[id^="windows-apps-list"] .row {
     display: flex;
 }
 
-#windows-apps-list .row li {
+ul[id^="windows-apps-list"] .row li {
     flex: 50%;
 }
 
 @media screen and (max-width: 600px) {
-    #windows-apps-list .row {
+    ul[id^="windows-apps-list"] .row {
         display: block;
     }
 }
 
-#windows-apps-list li {
+ul[id^="windows-apps-list"] li {
     margin-bottom: 0.5em;
 }
 
-#windows-apps-list a {
+ul[id^="windows-apps-list"] a {
     color: black;
 }
 
-#windows-apps-list a:hover {
+ul[id^="windows-apps-list"] a:hover {
     color: white;
 }
 
-#windows-gen-script {
+button[id^="windows-gen-script"] {
     margin-left: 10px;
     font-size: medium;
     padding: 0.5em;
@@ -338,12 +338,12 @@ nav a.menu {
     cursor: pointer;    
 }
 
-#hidden {
+div[id^="hidden"] {
     display: none;
     margin: 20px;
 }
 
-#exec-policy-button, #cinst-button {
+#exec-policy-button, #cinst-button, #winget-button {
     padding: 0.5em;
     border-radius: 5px;
     outline: none;

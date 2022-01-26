@@ -34,252 +34,503 @@
             </p>
         </section>
         <section id="windows-apps">
-            <h3>2. select Windows apps to install (uses <a href="https://chocolatey.org/">Chocolatey</a>)</h3>
-            <div id="select-all-none">
-                <button id="select-all">select all</button>
-                <button id="select-none">select none</button>
+            <h3>2. select Windows apps to install</h3>
+            <div id="tab">
+                <button id="tablink-winget">Windows Package Manager</button>
+                <button id="tablink-choco">Chocolatey</button>
             </div>
-            <ul id="windows-apps-list">
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="sevenzip" name="app" value="sevenzip" checked>
-                        <label for="sevenzip">7zip&nbsp;&nbsp;</label><a href="https://www.7-zip.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="advanced-renamer" name="app" value="advanced-renamer">
-                        <label for="advanced-renamer">Advanced Renamer&nbsp;&nbsp;</label><a href="https://www.advancedrenamer.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
+            <div id="tab-winget">
+                <h4>uses Windows Package Manager a.k.a winget  <a href="https://docs.microsoft.com/en-us/windows/package-manager/winget" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a></h4>
+                <div id="select-all-none-winget">
+                    <button id="select-all-winget">select all</button>
+                    <button id="select-none-winget">select none</button>
                 </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="brave" name="app" value="brave">
-                        <label for="brave">Brave&nbsp;&nbsp;</label><a href="https://brave.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="crystal-disk-info" name="app" value="crystal-disk-info">
-                        <label for="crystal-disk-info">Crystal Disk Info&nbsp;&nbsp;</label><a href="https://crystalmark.info/en/software/crystaldiskinfo"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="crystal-disk-mark" name="app" value="crystal-disk-mark">
-                        <label for="crystal-disk-mark">Crystal Disk Mark&nbsp;&nbsp;</label><a href="https://crystalmark.info/en/software/crystaldiskmark"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="discord" name="app" value="discord" checked>
-                        <label for="discord">Discord&nbsp;&nbsp;</label><a href="https://discord.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="ditto" name="app" value="ditto" checked>
-                        <label for="ditto">Ditto&nbsp;&nbsp;</label><a href="https://ditto-cp.sourceforge.io"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="droidcam" name="app" value="droidcam">
-                        <label for="droidcam">Droidcam&nbsp;&nbsp;</label><a href="https://www.dev47apps.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="everything" name="app" value="everything" checked>
-                        <label for="everything">Everything&nbsp;&nbsp;</label><a href="https://www.voidtools.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="faststone-image-viewer" name="app" value="faststone-image-viewer">
-                        <label for="faststone-image-viewer">FastStone Image Viewer&nbsp;&nbsp;</label><a href="https://www.faststone.org/FSViewerDetail.htm"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="ffmpeg" name="app" value="ffmpeg">
-                        <label for="ffmpeg">ffmpeg&nbsp;&nbsp;</label><a href="https://www.ffmpeg.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="free-download-manager" name="app" value="free-download-manager" checked>
-                        <label for="free-download-manager">Free Download Manager&nbsp;&nbsp;</label><a href="https://www.freedownloadmanager.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="git" name="app" value="git" checked>
-                        <label for="git">Git&nbsp;&nbsp;</label><a href="https://git-scm.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="google-chrome" name="app" value="google-chrome" checked>
-                        <label for="google-chrome">Google Chrome&nbsp;&nbsp;</label><a href="https://www.google.com/chrome"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="google-drive" name="app" value="google-drive">
-                        <label for="google-drive">Google Drive&nbsp;&nbsp;</label><a href="https://www.google.com/drive/download"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="hwinfo" name="app" value="hwinfo" checked>
-                        <label for="hwinfo">HWiNFO&nbsp;&nbsp;</label><a href="https://www.hwinfo.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="keepassxc" name="app" value="keepassxc" checked>
-                        <label for="keepassxc">KeePassXC&nbsp;&nbsp;</label><a href="https://keepassxc.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="libreoffice" name="app" value="libreoffice" checked>
-                        <label for="libreoffice">LibreOffice&nbsp;&nbsp;</label><a href="https://www.libreoffice.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="lightshot" name="app" value="lightshot">
-                        <label for="lightshot">Lightshot&nbsp;&nbsp;</label><a href="https://app.prntscr.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="microsoft-visual-studio-code" name="app"
-                            value="microsoft-visual-studio-code" checked>
-                            <label for="microsoft-visual-studio-code">Microsoft Visual Studio Code&nbsp;&nbsp;</label><a href="https://code.visualstudio.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="mozilla-firefox" name="app" value="mozilla-firefox">
-                        <label for="mozilla-firefox">Mozilla Firefox&nbsp;&nbsp;</label><a href="https://www.mozilla.org/en-US/firefox/new"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="mozilla-thunderbird" name="app" value="mozilla-thunderbird">
-                        <label for="mozilla-thunderbird">Mozilla Thunderbird&nbsp;&nbsp;</label><a href="https://www.thunderbird.net"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="musicbee" name="app" value="musicbee" checked>
-                        <label for="musicbee">MusicBee&nbsp;&nbsp;</label><a href="https://www.getmusicbee.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="nodejs" name="app" value="nodejs" checked>
-                        <label for="nodejs">Node.js (LTS)&nbsp;&nbsp;</label><a href="https://nodejs.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="notepadplusplus" name="app" value="notepadplusplus" checked>
-                        <label for="notepadplusplus">Notepad++&nbsp;&nbsp;</label><a href="https://notepad-plus-plus.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="obs-studio" name="app" value="obs-studio" checked>
-                        <label for="obs-studio">OBS Studio&nbsp;&nbsp;</label><a href="https://obsproject.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="proton-vpn" name="app" value="proton-vpn">
-                        <label for="proton-vpn">ProtonVPN&nbsp;&nbsp;</label><a href="https://protonvpn.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="putty" name="app" value="putty">
-                        <label for="putty">Putty&nbsp;&nbsp;</label><a href="https://www.putty.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="python" name="app" value="python" checked>
-                        <label for="python">Python&nbsp;&nbsp;</label><a href="https://www.python.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="qbittorrent" name="app" value="qbittorrent" checked>
-                        <label for="qbittorrent">qBittorrent&nbsp;&nbsp;</label><a href="https://www.qbittorrent.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="revo-uninstaller" name="app" value="revo-uninstaller">
-                        <label for="revo-uninstaller">Revo Uninstaller&nbsp;&nbsp;</label><a href="https://www.revouninstaller.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="rufus" name="app" value="rufus">
-                        <label for="rufus">Rufus&nbsp;&nbsp;</label><a href="https://rufus.ie"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="shotcut" name="app" value="shotcut">
-                        <label for="shotcut">Shotcut&nbsp;&nbsp;</label><a href="https://shotcut.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="sumatrapdf" name="app" value="sumatrapdf" checked>
-                        <label for="sumatrapdf">SumatraPDF&nbsp;&nbsp;</label><a href="https://www.sumatrapdfreader.org/free-pdf-reader"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="telegram" name="app" value="telegram">
-                        <label for="telegram">Telegram&nbsp;&nbsp;</label><a href="https://telegram.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="treesize-free" name="app" value="treesize-free" checked>
-                        <label for="treesize-free">Treesize Free&nbsp;&nbsp;</label><a href="https://www.jam-software.com/treesize_free"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="unified-remote" name="app" value="unified-remote">
-                        <label for="unified-remote">Unified Remote&nbsp;&nbsp;</label><a href="https://www.unifiedremote.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="universal-usb-installer" name="app" value="universal-usb-installer">
-                        <label for="universal-usb-installer">Universal USB Installer&nbsp;&nbsp;</label><a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="vlc-media-player" name="app" value="vlc-media-player" checked>
-                        <label for="vlc-media-player">VLC media player&nbsp;&nbsp;</label><a href="https://www.videolan.org/vlc"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="virtualbox" name="app" value="virtualbox">
-                        <label for="virtualbox">Virtualbox&nbsp;&nbsp;</label><a href="https://www.virtualbox.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="windscribe" name="app" value="windscribe">
-                        <label for="windscribe">Windscribe&nbsp;&nbsp;</label><a href="https://windscribe.com"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="youtube-dl" name="app" value="youtube-dl">
-                        <label for="youtube-dl">youtube-dl&nbsp;&nbsp;</label><a href="https://youtube-dl.org"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <input type="checkbox" id="zoom" name="app" value="zoom">
-                        <label for="zoom">Zoom&nbsp;&nbsp;</label><a href="https://zoom.us"><i class="fas fa-external-link-alt fa-xs"></i></a>
-                    </li>
-                </div>
-            </ul>
-            <button id="windows-gen-script">generate script</button>
-            <div id="hidden">
-                <div id="copy-script">
-                    <h4>copy-paste script</h4>
-                    <ol>
-                        <li>open PowerShell as admin</li>
-                        <li>paste and hit enter:
-                            <div class="textarea-wrapper">
-                                <textarea rows="5" cols="30" id="exec-policy"
-                                    readonly>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</textarea>
-                            </div>
-                            <button id="exec-policy-button">copy to clipboard</button>
+                <ul id="windows-apps-list-winget">
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="sevenzip-winget" name="app" value="sevenzip" checked>
+                            <label for="sevenzip-winget">7zip&nbsp;&nbsp;</label><a href="https://www.7-zip.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
                         </li>
-                        <li>close PowerShell window</li>
-                        <li>again open PowerShell window as admin</li>
-                        <li>paste and hit enter:
-                            <div class="textarea-wrapper">
-                                <textarea id="cinst" rows="5" cols="30" readonly></textarea>
-                            </div>
-                            <button id="cinst-button">copy to clipboard</button>
+                        <li>
+                            <input type="checkbox" disabled id="advanced-renamer-winget" name="app" value="advanced-renamer">
+                            <label for="advanced-renamer-winget">Advanced Renamer&nbsp;&nbsp;</label><a href="https://www.advancedrenamer.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
                         </li>
-                    </ol>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="brave-winget" name="app" value="brave">
+                            <label for="brave-winget">Brave&nbsp;&nbsp;</label><a href="https://brave.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" disabled id="crystal-disk-info-winget" name="app" value="crystal-disk-info">
+                            <label for="crystal-disk-info-winget">Crystal Disk Info&nbsp;&nbsp;</label><a href="https://crystalmark.info/en/software/crystaldiskinfo" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" disabled id="crystal-disk-mark-winget" name="app" value="crystal-disk-mark">
+                            <label for="crystal-disk-mark-winget">Crystal Disk Mark&nbsp;&nbsp;</label><a href="https://crystalmark.info/en/software/crystaldiskmark" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="discord-winget" name="app" value="discord" checked>
+                            <label for="discord-winget">Discord&nbsp;&nbsp;</label><a href="https://discord.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="ditto-winget" name="app" value="ditto" checked>
+                            <label for="ditto-winget">Ditto&nbsp;&nbsp;</label><a href="https://ditto-cp.sourceforge.io" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="droidcam-winget" name="app" value="droidcam">
+                            <label for="droidcam-winget">Droidcam&nbsp;&nbsp;</label><a href="https://www.dev47apps.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="everything-winget" name="app" value="everything" checked>
+                            <label for="everything-winget">Everything&nbsp;&nbsp;</label><a href="https://www.voidtools.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="faststone-image-viewer-winget" name="app" value="faststone-image-viewer">
+                            <label for="faststone-image-viewer-winget">FastStone Image Viewer&nbsp;&nbsp;</label><a href="https://www.faststone.org/FSViewerDetail.htm" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" disabled id="ffmpeg-winget" name="app" value="ffmpeg">
+                            <label for="ffmpeg-winget">ffmpeg&nbsp;&nbsp;</label><a href="https://www.ffmpeg.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="free-download-manager-winget" name="app" value="free-download-manager" checked>
+                            <label for="free-download-manager-winget">Free Download Manager&nbsp;&nbsp;</label><a href="https://www.freedownloadmanager.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="git-winget" name="app" value="git" checked>
+                            <label for="git-winget">Git&nbsp;&nbsp;</label><a href="https://git-scm.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="google-chrome-winget" name="app" value="google-chrome" checked>
+                            <label for="google-chrome-winget">Google Chrome&nbsp;&nbsp;</label><a href="https://www.google.com/chrome" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="google-drive-winget" name="app" value="google-drive">
+                            <label for="google-drive-winget">Google Drive&nbsp;&nbsp;</label><a href="https://www.google.com/drive/download" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="hwinfo-winget" name="app" value="hwinfo" checked>
+                            <label for="hwinfo-winget">HWiNFO&nbsp;&nbsp;</label><a href="https://www.hwinfo.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="keepassxc-winget" name="app" value="keepassxc" checked>
+                            <label for="keepassxc-winget">KeePassXC&nbsp;&nbsp;</label><a href="https://keepassxc.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="libreoffice-winget" name="app" value="libreoffice" checked>
+                            <label for="libreoffice-winget">LibreOffice&nbsp;&nbsp;</label><a href="https://www.libreoffice.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" disabled id="lightshot-winget" name="app" value="lightshot">
+                            <label for="lightshot-winget">Lightshot&nbsp;&nbsp;</label><a href="https://app.prntscr.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="microsoft-visual-studio-code-winget" name="app"
+                                value="microsoft-visual-studio-code" checked>
+                                <label for="microsoft-visual-studio-code-winget">Microsoft Visual Studio Code&nbsp;&nbsp;</label><a href="https://code.visualstudio.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="mozilla-firefox-winget" name="app" value="mozilla-firefox">
+                            <label for="mozilla-firefox-winget">Mozilla Firefox&nbsp;&nbsp;</label><a href="https://www.mozilla.org/en-US/firefox/new" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="mozilla-thunderbird-winget" name="app" value="mozilla-thunderbird">
+                            <label for="mozilla-thunderbird-winget">Mozilla Thunderbird&nbsp;&nbsp;</label><a href="https://www.thunderbird.net" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" disabled id="musicbee-winget" name="app" value="musicbee" checked>
+                            <label for="musicbee-winget">MusicBee&nbsp;&nbsp;</label><a href="https://www.getmusicbee.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="nodejs-winget" name="app" value="nodejs" checked>
+                            <label for="nodejs-winget">Node.js (LTS)&nbsp;&nbsp;</label><a href="https://nodejs.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="notepadplusplus-winget" name="app" value="notepadplusplus" checked>
+                            <label for="notepadplusplus-winget">Notepad++&nbsp;&nbsp;</label><a href="https://notepad-plus-plus.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="obs-studio-winget" name="app" value="obs-studio" checked>
+                            <label for="obs-studio-winget">OBS Studio&nbsp;&nbsp;</label><a href="https://obsproject.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="proton-vpn-winget" name="app" value="proton-vpn">
+                            <label for="proton-vpn-winget">ProtonVPN&nbsp;&nbsp;</label><a href="https://protonvpn.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="putty-winget" name="app" value="putty">
+                            <label for="putty-winget">Putty&nbsp;&nbsp;</label><a href="https://www.putty.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="python-winget" name="app" value="python" checked>
+                            <label for="python-winget">Python&nbsp;&nbsp;</label><a href="https://www.python.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="qbittorrent-winget" name="app" value="qbittorrent" checked>
+                            <label for="qbittorrent-winget">qBittorrent&nbsp;&nbsp;</label><a href="https://www.qbittorrent.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="revo-uninstaller-winget" name="app" value="revo-uninstaller">
+                            <label for="revo-uninstaller-winget">Revo Uninstaller&nbsp;&nbsp;</label><a href="https://www.revouninstaller.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="rufus-winget" name="app" value="rufus">
+                            <label for="rufus-winget">Rufus&nbsp;&nbsp;</label><a href="https://rufus.ie" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="shotcut-winget" name="app" value="shotcut">
+                            <label for="shotcut-winget">Shotcut&nbsp;&nbsp;</label><a href="https://shotcut.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="sumatrapdf-winget" name="app" value="sumatrapdf" checked>
+                            <label for="sumatrapdf-winget">SumatraPDF&nbsp;&nbsp;</label><a href="https://www.sumatrapdfreader.org/free-pdf-reader" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="telegram-winget" name="app" value="telegram">
+                            <label for="telegram-winget">Telegram&nbsp;&nbsp;</label><a href="https://telegram.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="treesize-free-winget" name="app" value="treesize-free" checked>
+                            <label for="treesize-free-winget">Treesize Free&nbsp;&nbsp;</label><a href="https://www.jam-software.com/treesize_free" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" disabled id="unified-remote-winget" name="app" value="unified-remote">
+                            <label for="unified-remote-winget">Unified Remote&nbsp;&nbsp;</label><a href="https://www.unifiedremote.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" disabled id="universal-usb-installer-winget" name="app" value="universal-usb-installer">
+                            <label for="universal-usb-installer-winget">Universal USB Installer&nbsp;&nbsp;</label><a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="vlc-media-player-winget" name="app" value="vlc-media-player" checked>
+                            <label for="vlc-media-player-winget">VLC media player&nbsp;&nbsp;</label><a href="https://www.videolan.org/vlc" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="virtualbox-winget" name="app" value="virtualbox">
+                            <label for="virtualbox-winget">Virtualbox&nbsp;&nbsp;</label><a href="https://www.virtualbox.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="windscribe-winget" name="app" value="windscribe">
+                            <label for="windscribe-winget">Windscribe&nbsp;&nbsp;</label><a href="https://windscribe.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" disabled id="youtube-dl-winget" name="app" value="youtube-dl">
+                            <label for="youtube-dl-winget">youtube-dl&nbsp;&nbsp;</label><a href="https://youtube-dl.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="zoom-winget" name="app" value="zoom">
+                            <label for="zoom-winget">Zoom&nbsp;&nbsp;</label><a href="https://zoom.us" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                </ul>
+                <button id="windows-gen-script-winget">generate script</button>
+                <div id="hidden-winget">
+                    <div id="copy-script-winget">
+                        <h4>copy-paste script</h4>
+                        <ol>
+                            <li>open Windows Store app</li>
+                            <li>search 'App Installer'</li>
+                            <li>update 'App Installer'</li>
+                            <li>open PowerShell as admin</li>
+                            <li>paste and hit enter:
+                                <div class="textarea-wrapper">
+                                    <textarea id="winget" rows="5" cols="30" readonly></textarea>
+                                </div>
+                                <button id="winget-button">copy to clipboard</button>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div id="tab-choco">
+                <h4>uses Chocolatey  <a href="https://chocolatey.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a></h4>
+                <div id="select-all-none-choco">
+                    <button id="select-all-choco">select all</button>
+                    <button id="select-none-choco">select none</button>
+                </div>
+                <ul id="windows-apps-list-choco">
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="sevenzip-choco" name="app" value="sevenzip" checked>
+                            <label for="sevenzip-choco">7zip&nbsp;&nbsp;</label><a href="https://www.7-zip.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="advanced-renamer-choco" name="app" value="advanced-renamer">
+                            <label for="advanced-renamer-choco">Advanced Renamer&nbsp;&nbsp;</label><a href="https://www.advancedrenamer.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="brave-choco" name="app" value="brave">
+                            <label for="brave-choco">Brave&nbsp;&nbsp;</label><a href="https://brave.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="crystal-disk-info-choco" name="app" value="crystal-disk-info">
+                            <label for="crystal-disk-info-choco">Crystal Disk Info&nbsp;&nbsp;</label><a href="https://crystalmark.info/en/software/crystaldiskinfo" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="crystal-disk-mark-choco" name="app" value="crystal-disk-mark">
+                            <label for="crystal-disk-mark-choco">Crystal Disk Mark&nbsp;&nbsp;</label><a href="https://crystalmark.info/en/software/crystaldiskmark" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="discord-choco" name="app" value="discord" checked>
+                            <label for="discord-choco">Discord&nbsp;&nbsp;</label><a href="https://discord.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="ditto-choco" name="app" value="ditto" checked>
+                            <label for="ditto-choco">Ditto&nbsp;&nbsp;</label><a href="https://ditto-cp.sourceforge.io" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="droidcam-choco" name="app" value="droidcam">
+                            <label for="droidcam-choco">Droidcam&nbsp;&nbsp;</label><a href="https://www.dev47apps.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="everything-choco" name="app" value="everything" checked>
+                            <label for="everything-choco">Everything&nbsp;&nbsp;</label><a href="https://www.voidtools.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="faststone-image-viewer-choco" name="app" value="faststone-image-viewer">
+                            <label for="faststone-image-viewer-choco">FastStone Image Viewer&nbsp;&nbsp;</label><a href="https://www.faststone.org/FSViewerDetail.htm" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="ffmpeg-choco" name="app" value="ffmpeg">
+                            <label for="ffmpeg-choco">ffmpeg&nbsp;&nbsp;</label><a href="https://www.ffmpeg.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="free-download-manager-choco" name="app" value="free-download-manager" checked>
+                            <label for="free-download-manager-choco">Free Download Manager&nbsp;&nbsp;</label><a href="https://www.freedownloadmanager.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="git-choco" name="app" value="git" checked>
+                            <label for="git-choco">Git&nbsp;&nbsp;</label><a href="https://git-scm.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="google-chrome-choco" name="app" value="google-chrome" checked>
+                            <label for="google-chrome-choco">Google Chrome&nbsp;&nbsp;</label><a href="https://www.google.com/chrome" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="google-drive-choco" name="app" value="google-drive">
+                            <label for="google-drive-choco">Google Drive&nbsp;&nbsp;</label><a href="https://www.google.com/drive/download" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="hwinfo-choco" name="app" value="hwinfo" checked>
+                            <label for="hwinfo-choco">HWiNFO&nbsp;&nbsp;</label><a href="https://www.hwinfo.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="keepassxc-choco" name="app" value="keepassxc" checked>
+                            <label for="keepassxc-choco">KeePassXC&nbsp;&nbsp;</label><a href="https://keepassxc.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="libreoffice-choco" name="app" value="libreoffice" checked>
+                            <label for="libreoffice-choco">LibreOffice&nbsp;&nbsp;</label><a href="https://www.libreoffice.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="lightshot-choco" name="app" value="lightshot">
+                            <label for="lightshot-choco">Lightshot&nbsp;&nbsp;</label><a href="https://app.prntscr.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="microsoft-visual-studio-code-choco" name="app"
+                                value="microsoft-visual-studio-code" checked>
+                                <label for="microsoft-visual-studio-code-choco">Microsoft Visual Studio Code&nbsp;&nbsp;</label><a href="https://code.visualstudio.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="mozilla-firefox-choco" name="app" value="mozilla-firefox">
+                            <label for="mozilla-firefox-choco">Mozilla Firefox&nbsp;&nbsp;</label><a href="https://www.mozilla.org/en-US/firefox/new" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="mozilla-thunderbird-choco" name="app" value="mozilla-thunderbird">
+                            <label for="mozilla-thunderbird-choco">Mozilla Thunderbird&nbsp;&nbsp;</label><a href="https://www.thunderbird.net" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="musicbee-choco" name="app" value="musicbee" checked>
+                            <label for="musicbee-choco">MusicBee&nbsp;&nbsp;</label><a href="https://www.getmusicbee.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="nodejs-choco" name="app" value="nodejs" checked>
+                            <label for="nodejs-choco">Node.js (LTS)&nbsp;&nbsp;</label><a href="https://nodejs.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="notepadplusplus-choco" name="app" value="notepadplusplus" checked>
+                            <label for="notepadplusplus-choco">Notepad++&nbsp;&nbsp;</label><a href="https://notepad-plus-plus.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="obs-studio-choco" name="app" value="obs-studio" checked>
+                            <label for="obs-studio-choco">OBS Studio&nbsp;&nbsp;</label><a href="https://obsproject.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="proton-vpn-choco" name="app" value="proton-vpn">
+                            <label for="proton-vpn-choco">ProtonVPN&nbsp;&nbsp;</label><a href="https://protonvpn.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="putty-choco" name="app" value="putty">
+                            <label for="putty-choco">Putty&nbsp;&nbsp;</label><a href="https://www.putty.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="python-choco" name="app" value="python" checked>
+                            <label for="python-choco">Python&nbsp;&nbsp;</label><a href="https://www.python.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="qbittorrent-choco" name="app" value="qbittorrent" checked>
+                            <label for="qbittorrent-choco">qBittorrent&nbsp;&nbsp;</label><a href="https://www.qbittorrent.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="revo-uninstaller-choco" name="app" value="revo-uninstaller">
+                            <label for="revo-uninstaller-choco">Revo Uninstaller&nbsp;&nbsp;</label><a href="https://www.revouninstaller.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="rufus-choco" name="app" value="rufus">
+                            <label for="rufus-choco">Rufus&nbsp;&nbsp;</label><a href="https://rufus.ie" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="shotcut-choco" name="app" value="shotcut">
+                            <label for="shotcut-choco">Shotcut&nbsp;&nbsp;</label><a href="https://shotcut.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="sumatrapdf-choco" name="app" value="sumatrapdf" checked>
+                            <label for="sumatrapdf-choco">SumatraPDF&nbsp;&nbsp;</label><a href="https://www.sumatrapdfreader.org/free-pdf-reader" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="telegram-choco" name="app" value="telegram">
+                            <label for="telegram-choco">Telegram&nbsp;&nbsp;</label><a href="https://telegram.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="treesize-free-choco" name="app" value="treesize-free" checked>
+                            <label for="treesize-free-choco">Treesize Free&nbsp;&nbsp;</label><a href="https://www.jam-software.com/treesize_free" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="unified-remote-choco" name="app" value="unified-remote">
+                            <label for="unified-remote-choco">Unified Remote&nbsp;&nbsp;</label><a href="https://www.unifiedremote.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="universal-usb-installer-choco" name="app" value="universal-usb-installer">
+                            <label for="universal-usb-installer-choco">Universal USB Installer&nbsp;&nbsp;</label><a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="vlc-media-player-choco" name="app" value="vlc-media-player" checked>
+                            <label for="vlc-media-player-choco">VLC media player&nbsp;&nbsp;</label><a href="https://www.videolan.org/vlc" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="virtualbox-choco" name="app" value="virtualbox">
+                            <label for="virtualbox-choco">Virtualbox&nbsp;&nbsp;</label><a href="https://www.virtualbox.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="windscribe-choco" name="app" value="windscribe">
+                            <label for="windscribe-choco">Windscribe&nbsp;&nbsp;</label><a href="https://windscribe.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="youtube-dl-choco" name="app" value="youtube-dl">
+                            <label for="youtube-dl-choco">youtube-dl&nbsp;&nbsp;</label><a href="https://youtube-dl.org" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                    <div class="row">
+                        <li>
+                            <input type="checkbox" id="zoom-choco" name="app" value="zoom">
+                            <label for="zoom-choco">Zoom&nbsp;&nbsp;</label><a href="https://zoom.us" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                        </li>
+                    </div>
+                </ul>
+                <button id="windows-gen-script-choco">generate script</button>
+                <div id="hidden-choco">
+                    <div id="copy-script-choco">
+                        <h4>copy-paste script</h4>
+                        <ol>
+                            <li>open PowerShell as admin</li>
+                            <li>paste and hit enter:
+                                <div class="textarea-wrapper">
+                                    <textarea rows="5" cols="30" id="exec-policy"
+                                        readonly>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</textarea>
+                                </div>
+                                <button id="exec-policy-button">copy to clipboard</button>
+                            </li>
+                            <li>close PowerShell window</li>
+                            <li>again open PowerShell window as admin</li>
+                            <li>paste and hit enter:
+                                <div class="textarea-wrapper">
+                                    <textarea id="cinst" rows="5" cols="30" readonly></textarea>
+                                </div>
+                                <button id="cinst-button">copy to clipboard</button>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </section>
@@ -287,74 +538,96 @@
     <script>
         const toggleMenu = () => document.querySelector('nav').classList.toggle('responsive')
         document.querySelector('nav a.menu').addEventListener('click', toggleMenu)
-        const selectAll = () => {
-            document.querySelectorAll('#windows-apps-list input').forEach(input => input.checked = true)
+        const selectAllWinget = () => {
+            document.querySelectorAll('#windows-apps-list-winget input').forEach(input => input.checked = true)
         }
-        document.getElementById('select-all').addEventListener('click', selectAll)
-        const selectNone = () => {
-            document.querySelectorAll('#windows-apps-list input').forEach(input => input.checked = false)
+        const selectAllChoco = () => {
+            document.querySelectorAll('#windows-apps-list-choco input').forEach(input => input.checked = true)
         }
-        document.getElementById('select-none').addEventListener('click', selectNone)
+        document.getElementById('select-all-winget').addEventListener('click', selectAllWinget)
+        document.getElementById('select-all-choco').addEventListener('click', selectAllChoco)
+        const selectNoneWinget = () => {
+            document.querySelectorAll('#windows-apps-list-winget input').forEach(input => input.checked = false)
+        }
+        const selectNoneChoco = () => {
+            document.querySelectorAll('#windows-apps-list-choco input').forEach(input => input.checked = false)
+        }
+        document.getElementById('select-none-winget').addEventListener('click', selectNoneWinget)
+        document.getElementById('select-none-choco').addEventListener('click', selectNoneChoco)
         const appsDict = {
-            "sevenzip": "7zip",
-            "advanced-renamer": "advanced-renamer",
-            "brave": "brave",
-            "crystal-disk-info": "crystaldiskinfo",
-            "crystal-disk-mark": "crystaldiskmark",
-            "discord": "discord",
-            "ditto": "ditto",
-            "everything": "everything",
-            "faststone-image-viewer": "fsviewer",
-            "free-download-manager": "freedownloadmanager",
-            "git": "git",
-            "google-chrome": "googlechrome",
-            "google-drive": "googledrive",
-            "hwinfo": "hwinfo",
-            "keepassxc": "keepassxc",
-            "libreoffice": "libreoffice-fresh",
-            "lightshot": "lightshot",
-            "microsoft-visual-studio-code": "vscode",
-            "mozilla-firefox": "firefox",
-            "mozilla-thunderbird": "thunderbird",
-            "musicbee": "musicbee",
-            "nodejs": "nodejs-lts",
-            "notepadplusplus": "notepadplusplus",
-            "obs-studio": "obs-studio",
-            "python": "python",
-            "qbittorrent": "qbittorrent",
-            "revo-uninstaller": "revo-uninstaller",
-            "sumatrapdf": "sumatrapdf",
-            "telegram": "telegram",
-            "treesize-free": "treesizefree",
-            "unified-remote": "unifiedremote",
-            "vlc-media-player": "vlc",
-            "windscribe": "windscribe",
-            "zoom": "zoom",
-            "droidcam": "droidcamclient",
-            "ffmpeg": "ffmpeg",
-            "youtube-dl": "youtube-dl",
-            "proton-vpn": "protonvpn",
-            "putty": "putty",
-            "rufus": "rufus",
-            "shotcut": "shotcut",
-            "universal-usb-installer": "universal-usb-installer",
-            "virtualbox": "virtualbox"
+            "sevenzip": ["7zip.7zip", "7zip"],
+            "advanced-renamer": ["", "advanced-renamer"],
+            "brave": ["BraveSoftware.BraveBrowser", "brave"],
+            "crystal-disk-info": ["", "crystaldiskinfo"],
+            "crystal-disk-mark": ["", "crystaldiskmark"],
+            "discord": ["Discord.Discord", "discord"],
+            "ditto": ["Ditto.Ditto", "ditto"],
+            "droidcam": ["dev47apps.DroidCam", "droidcamclient"],
+            "everything": ["voidtools.Everything", "everything"],
+            "faststone-image-viewer": ["FastStone.Viewer", "fsviewer"],
+            "ffmpeg": ["", "ffmpeg"],
+            "free-download-manager": ["SoftDeluxe.FreeDownloadManager", "freedownloadmanager"],
+            "git": ["Git.Git", "git"],
+            "google-chrome": ["Google.Chrome", "googlechrome"],
+            "google-drive": ["Google.Drive", "googledrive"],
+            "hwinfo": ["REALiX.HWiNFO", "hwinfo"],
+            "keepassxc": ["KeePassXCTeam.KeePassXC", "keepassxc"],
+            "libreoffice": ["TheDocumentFoundation.LibreOffice", "libreoffice-fresh"],
+            "lightshot": ["", "lightshot"],
+            "microsoft-visual-studio-code": ["Microsoft.VisualStudioCode", "vscode"],
+            "mozilla-firefox": ["Mozilla.Firefox", "firefox"],
+            "mozilla-thunderbird": ["Mozilla.Thunderbird", "thunderbird"],
+            "musicbee": ["", "musicbee"],
+            "nodejs": ["OpenJS.NodeJS.LTS", "nodejs-lts"],
+            "notepadplusplus": ["Notepad++.Notepad++", "notepadplusplus"],
+            "obs-studio": ["OBSProject.OBSStudio", "obs-studio"],
+            "proton-vpn": ["ProtonTechnologies.ProtonVPN", "protonvpn"],
+            "putty": ["PuTTY.PuTTY", "putty"],
+            "python": ["Python.Python.3", "python"],
+            "qbittorrent": ["qBittorrent.qBittorrent", "qbittorrent"],
+            "revo-uninstaller": ["RevoUninstaller.RevoUninstaller", "revo-uninstaller"],
+            "rufus": ["Rufus.Rufus", "rufus"],
+            "shotcut": ["Meltytech.Shotcut", "shotcut"],
+            "sumatrapdf": ["SumatraPDF.SumatraPDF", "sumatrapdf"],
+            "telegram": ["Telegram.TelegramDesktop", "telegram"],
+            "treesize-free": ["JAMSoftware.TreeSize.Free", "treesizefree"],
+            "unified-remote": ["", "unifiedremote"],
+            "universal-usb-installer": ["", "universal-usb-installer"],
+            "virtualbox": ["Oracle.VirtualBox", "virtualbox"],
+            "vlc-media-player": ["VideoLAN.VLC", "vlc"],
+            "windscribe": ["WindscribeLimited.Windscribe", "windscribe"],
+            "youtube-dl": ["", "youtube-dl"],
+            "zoom": ["Zoom.Zoom", "zoom"]
         }
         let appsStr = ''
-        const generate = () => {
-            const inputs = document.querySelectorAll('#windows-apps-list input')
+        const generateWinget = () => {
+            const inputs = document.querySelectorAll('#windows-apps-list-winget input')
             appsStr = ''
             inputs.forEach(input => {
-                if (input.checked) appsStr = `${appsStr}${appsDict[input.id]} `
+                if (input.checked) appsStr = `${appsStr}winget install --id "${appsDict[input.id.slice(0, -7)][0]}" -e -h -s winget --accept-package-agreements --accept-source-agreements & `
             })
-            appsStr = (appsStr == '') ? 'virus' : appsStr
-            document.getElementById('cinst').value = `cinst ${appsStr} -yr`
-            const hidden = document.getElementById('hidden')
+            appsStr = (appsStr == '') ? 'winget search virus' : appsStr.slice(0, -3)
+            document.getElementById('winget').value = appsStr
+            const hidden = document.getElementById('hidden-winget')
             hidden.style.display = 'block'
             hidden.scrollIntoView({ behavior: "smooth", block: "nearest" })
         }
-        const genButton = document.getElementById('windows-gen-script')
-        genButton.addEventListener('click', generate)
+        const generateChoco = () => {
+            const inputs = document.querySelectorAll('#windows-apps-list-choco input')
+            appsStr = ''
+            inputs.forEach(input => {
+                if (input.checked) appsStr = `${appsStr}${appsDict[input.id.slice(0, -6)][1]} `
+            })
+            appsStr = (appsStr == '') ? 'virus' : appsStr
+            document.getElementById('cinst').value = `cinst ${appsStr} -yr`
+            const hidden = document.getElementById('hidden-choco')
+            hidden.style.display = 'block'
+            hidden.scrollIntoView({ behavior: "smooth", block: "nearest" })
+        }
+        const genButtonWinget = document.getElementById('windows-gen-script-winget')
+        const genButtonChoco = document.getElementById('windows-gen-script-choco')
+        genButtonWinget.addEventListener('click', generateWinget)
+        genButtonChoco.addEventListener('click', generateChoco)
         const copyToClipboard = (e) => {
             const id = e.target.id.replace('-button', '')
             const text = document.getElementById(id).value
@@ -364,6 +637,8 @@
         execPolicyButton.addEventListener('click', copyToClipboard)
         const cinstButton = document.getElementById('cinst-button')
         cinstButton.addEventListener('click', copyToClipboard)
+        const wingetButton = document.getElementById('winget-button')
+        wingetButton.addEventListener('click', copyToClipboard)
     </script>
 </body>
 
