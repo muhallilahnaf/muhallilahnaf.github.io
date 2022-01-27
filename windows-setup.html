@@ -36,7 +36,7 @@
         <section id="windows-apps">
             <h3>2. select Windows apps to install</h3>
             <div id="tab">
-                <button id="tablink-winget">Windows Package Manager</button>
+                <button id="tablink-winget" class="active">Windows Package Manager</button>
                 <button id="tablink-choco">Chocolatey</button>
             </div>
             <div id="tab-winget">
@@ -159,7 +159,7 @@
                     </div>
                     <div class="row">
                         <li>
-                            <input type="checkbox" disabled id="musicbee-winget" name="app" value="musicbee" checked>
+                            <input type="checkbox" disabled id="musicbee-winget" name="app" value="musicbee">
                             <label for="musicbee-winget">MusicBee&nbsp;&nbsp;</label><a href="https://www.getmusicbee.com" target="_blank"><i class="fas fa-external-link-alt fa-xs"></i></a>
                         </li>
                         <li>
@@ -270,12 +270,13 @@
                         <h4>copy-paste script</h4>
                         <ol>
                             <li>open Windows Store app</li>
-                            <li>search 'App Installer'</li>
-                            <li>update 'App Installer'</li>
-                            <li>open PowerShell as admin</li>
+                            <li>search 'App Installer' and update it</li>
+                            <li>open PowerShell as admin 
+                                <span>(press Win key, type Powershell, right-click on 'Windows PowerShell', click 'run as administrator', select 'Yes')</span>
+                            </li>
                             <li>paste and hit enter:
                                 <div class="textarea-wrapper">
-                                    <textarea id="winget" rows="5" cols="30" readonly></textarea>
+                                    <textarea id="winget" rows="15" cols="30" readonly></textarea>
                                 </div>
                                 <button id="winget-button">copy to clipboard</button>
                             </li>
@@ -513,7 +514,9 @@
                     <div id="copy-script-choco">
                         <h4>copy-paste script</h4>
                         <ol>
-                            <li>open PowerShell as admin</li>
+                            <li>open PowerShell as admin 
+                                <span>(press Win key, type Powershell, right-click on 'Windows PowerShell', click 'run as administrator', select 'Yes')</span>
+                            </li>
                             <li>paste and hit enter:
                                 <div class="textarea-wrapper">
                                     <textarea rows="5" cols="30" id="exec-policy"
@@ -538,8 +541,24 @@
     <script>
         const toggleMenu = () => document.querySelector('nav').classList.toggle('responsive')
         document.querySelector('nav a.menu').addEventListener('click', toggleMenu)
+        const tabClick = () => {
+            const tabs = document.querySelectorAll('div[id^="tab-"]')
+            tabs.forEach(tab => tab.style.display = 'none')
+            const tablinks = document.querySelectorAll('button[id^=tablink]')
+            tablinks.forEach(tablink => tablink.classList.toggle('active'))
+        }
+        const openWinget = () => {
+            tabClick()
+            document.getElementById('tab-winget').style.display = 'block'
+        }
+        const openChoco = () => {
+            tabClick()
+            document.getElementById('tab-choco').style.display = 'block'
+        }
+        document.getElementById('tablink-winget').addEventListener('click', openWinget)
+        document.getElementById('tablink-choco').addEventListener('click', openChoco)
         const selectAllWinget = () => {
-            document.querySelectorAll('#windows-apps-list-winget input').forEach(input => input.checked = true)
+            document.querySelectorAll('#windows-apps-list-winget input:not([disabled])').forEach(input => input.checked = true)
         }
         const selectAllChoco = () => {
             document.querySelectorAll('#windows-apps-list-choco input').forEach(input => input.checked = true)

@@ -289,6 +289,33 @@ nav a.menu {
     color: black;
 }
 
+#tab {
+    display: flex;
+}
+
+button[id^="tablink"] {
+    flex: 50%;
+    background-color: darkgray;
+    padding: 10px 5px;
+    font-size: medium;
+    outline: none;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[id^="tablink"]:hover {
+    opacity: 1;
+}
+
+button[id^="tablink"].active {
+    opacity: 1;
+}
+
+#tab-choco {
+    display: none;
+}
+
 button[id^="select-all"], button[id^="select-none"] {
     padding: 0.5em;
     border-radius: 5px;
@@ -318,6 +345,10 @@ ul[id^="windows-apps-list"] .row li {
 
 ul[id^="windows-apps-list"] li {
     margin-bottom: 0.5em;
+}
+
+ul[id^="windows-apps-list"] input[disabled] + label {
+    text-decoration: line-through;
 }
 
 ul[id^="windows-apps-list"] a {
@@ -351,7 +382,7 @@ div[id^="hidden"] {
     cursor: pointer;    
 }
 
-#copy-script {
+div[id^="copy-script-"] {
     background-color: #5d8aa8;
     color: black;
     padding: 5px;
@@ -359,8 +390,13 @@ div[id^="hidden"] {
     border-radius: 10px;
 }
 
-#copy-script li {
+div[id^="copy-script-"] li {
     margin-bottom: 5px;
+}
+
+div[id^="copy-script-"] span {
+    font-size: small;
+
 }
 
 .textarea-wrapper {
